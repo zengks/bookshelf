@@ -1,28 +1,33 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { Link } from "expo-router";
-
-import Spacer from "../components/Spacer";
 
 // themed components
 import ThemedView from "../components/ThemedView";
 import ThemedLogo from "../components/ThemedLogo";
-import ThemedCard from "../components/ThemedCard";
+import ThemedText from "../components/ThemedText";
+import Spacer from "../components/Spacer";
 
 const Index = () => {
     return (
         <ThemedView style={styles.container}>
-            <ThemedLogo style={styles.img} />
-            <Text style={styles.title}>The Number 1</Text>
-            <Spacer height={10} />
-            <Text style={{ marginTop: 10, marginBottom: 30 }}>
-                Reading List App
-            </Text>
+            <ThemedLogo />
             <Spacer />
-            <Link href="/about" style={styles.link}>
-                About Page
+
+            <ThemedText style={styles.title} title={true}>
+                The Number 1
+            </ThemedText>
+
+            <Spacer height={10} />
+            <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
+                Reading List App
+            </ThemedText>
+
+            <Spacer />
+            <Link href="/login" style={styles.link}>
+                <ThemedText>Login</ThemedText>
             </Link>
-            <Link href="/contact" style={styles.link}>
-                Contact Page
+            <Link href="/register" style={styles.link}>
+                <ThemedText>Register</ThemedText>
             </Link>
         </ThemedView>
     );
@@ -40,9 +45,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 18,
     },
-    img: {
-        marginVertical: 20,
-    },
+
     link: {
         marginVertical: 10,
         borderBottomWidth: 1,
