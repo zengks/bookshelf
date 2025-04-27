@@ -6,7 +6,7 @@
         "scheme": "bookshelf",
         "orientation": "portrait",
         "icon": "./assets/icon.png",
-        "userInterfaceStyle": "dark",
+        "userInterfaceStyle": "light",
         "newArchEnabled": true,
         "splash": {
             "image": "./assets/splash-icon.png",

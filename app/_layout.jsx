@@ -16,7 +16,7 @@ const RootLayout = () => {
                     headerTintColor: theme.title,
                 }}
             >
-                <Stack.Screen name="index" options={{ title: "Hello" }} />
+                <Stack.Screen name="index" options={{ title: "Welcome" }} />
                 <Stack.Screen name="(auth)" options={{ headerShown: false }} />
                 <Stack.Screen
                     name="(dashboard)"
