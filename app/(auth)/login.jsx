@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { useState } from "react";
 import { Link } from "expo-router";
+import { useUser } from "../../hooks/useUser";
 
 // themed components
 import ThemedView from "../../components/ThemedView";
@@ -18,7 +19,10 @@ const login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const { user } = useUser;
+
     const handleSubmit = () => {
+        console.log("current user", user);
         console.log("Login button pressed", email, password);
     };
 
