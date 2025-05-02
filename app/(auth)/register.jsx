@@ -1,7 +1,11 @@
-import { StyleSheet, Text } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    Keyboard,
+    TouchableWithoutFeedback,
+} from "react-native";
 import { useState } from "react";
 import { Link } from "expo-router";
-import { TouchableWithoutFeedback } from "react-native-web";
 
 // themed components
 import ThemedView from "../../components/ThemedView";
@@ -9,12 +13,18 @@ import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { useUser } from "../../hooks/useUser";
 
 const register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const handleSubmit = () => {
-        console.log("Register button pressed", email, password);
+
+    const { register } = useUser();
+
+    const handleSubmit = async () => {
+        try {
+            await register(email, password);
+        } catch (error) {}
     };
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
