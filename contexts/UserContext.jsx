@@ -13,7 +13,7 @@ export function UserProvider({ children }) {
             const response = await account.get();
             setUser(response);
         } catch (error) {
-            console.error("Login error:", error);
+            throw Error(error.message);
         }
     }
 
@@ -22,15 +22,13 @@ export function UserProvider({ children }) {
             await account.create(ID.unique(), email, password);
             await login(email, password);
         } catch (error) {
-            console.error("Register error:", error);
+            throw Error(error.message);
         }
     }
 
     async function logout() {
-        try {
-        } catch (error) {
-            console.error("Logout error:", error);
-        }
+        await account.deleteSession("current");
+        setUser(null);
     }
 
     return (
