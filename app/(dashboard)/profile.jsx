@@ -8,12 +8,12 @@ import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
 
 const profile = () => {
-    const { logout } = useUser();
+    const { logout, user } = useUser();
 
     return (
         <ThemedView style={styles.container}>
             <ThemedText title={true} style={styles.heading}>
-                Your Email
+                {user?.email ? user.email : "No email found"}
             </ThemedText>
             <Spacer />
 
