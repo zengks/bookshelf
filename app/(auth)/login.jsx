@@ -3,7 +3,6 @@ import {
     StyleSheet,
     Text,
     TouchableWithoutFeedback,
-    Pressable,
 } from "react-native";
 import { useState } from "react";
 import { Link } from "expo-router";

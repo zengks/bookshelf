@@ -1,5 +1,4 @@
 import { StyleSheet, Text } from "react-native";
-import React from "react";
 
 import { useUser } from "../../hooks/useUser";
 import Spacer from "../../components/Spacer";
